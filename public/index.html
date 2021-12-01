@@ -25,6 +25,31 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
+    <script> 
+      var digitalData = { 
+          "page": { 
+              "pageInfo": { 
+                  "pageName": "Home" 
+              } 
+          } 
+      }; 
+    </script> 
+    <!--/Data Layer--> 
+    <!-- targetPageParams(), targetPageParamsAll(), Data Providers or targetGlobalSettings() functions to enrich the visitor profile or modify the library settings--> 
+    <script> 
+        targetPageParams = function() { 
+            return { 
+                "a": 1, 
+                "b": 2, 
+                "pageName": digitalData.page.pageInfo.pageName, 
+            }; 
+        }; 
+    </script> 
+    <!--/targetPageParams()--> 
+
+    <script src="at.js"></script> 
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
