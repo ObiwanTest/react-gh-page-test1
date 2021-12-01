@@ -6,7 +6,7 @@ yarn deploy
 ## Setup Steps
 ```
 # Clone repo.
-git clone ...
+git clone git@github.com:ObiwanTest/react-gh-page-test1.git
 
 # Create new react app.
 npx create-react-app .
