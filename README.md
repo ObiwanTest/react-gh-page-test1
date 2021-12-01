@@ -16,7 +16,7 @@ yarn add gh-pages
 
 # Open package.json in editor
 # 1. Add homepage field on the same level as "name".
-"homepage": "https://github.com/ObiwanTest/react-gh-page-test1"
+"homepage": "https://obiwantest.github.io/react-gh-page-test1/"
 
 # 2. Add predeploy and deploy fields under scripts.
 "predeploy": "npm run build",
