@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Content } from 'carbon-components-react';
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
