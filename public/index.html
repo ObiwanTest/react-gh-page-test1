@@ -46,7 +46,12 @@
             };
         }; 
     </script> 
-    <!--/targetPageParams()--> 
+    <script>
+        window.targetGlobalSettings = {
+            cookieDomain = 'obiwantest.github.io' // set cookies on subdomain bc github.io is on public suffix list
+        };
+    </script>
+    <!--/targetPageParams(), targetGlobalSettings--> 
 
     <script src="at.js"></script> 
 
