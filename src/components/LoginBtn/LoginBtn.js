@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from 'carbon-components-react';
-import { useLocalStorageState } from '../../utils';
+import { useSessionStorageState } from '../../utils';
 
 const LoginBtn = () => {
-    const [isLogin, setIsLogin] = useLocalStorageState(false, "login");
+    const [isLogin, setIsLogin] = useSessionStorageState(false, "login");
     const [btnTxt, setBtnTxt] = useState(isLogin ? "Logout" : "Login");
 
     function btnClickHandler(e) {
