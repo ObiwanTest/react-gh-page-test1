@@ -4,11 +4,13 @@ import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import LoginBtn from './components/LoginBtn/LoginBtn';
 
 function App() {
   return (
-    <div>
+    <>
       <Content>
+        <LoginBtn />
         <nav>
           <ul id="navigation">
             <li>
@@ -24,7 +26,7 @@ function App() {
           <Route path="/about" component={AboutPage} />
         </Switch>
       </Content>
-    </div>
+    </>
   );
 }
 
