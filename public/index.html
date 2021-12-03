@@ -82,11 +82,12 @@
     <script>
         // Sanitize viewName to get rid of any trailing symbols derived from URL
         function sanitizeViewName(viewName) {
-            if (viewName.startsWith('#')) {
-                viewName = viewName.substr(1);
-            }
+            // if (viewName.startsWith('#')) {
+            //     viewName = viewName.substr(1);
+            // }
             if (viewName.startsWith('/')) {
                 viewName = viewName.substr(1);
+                viewName = viewName.substr(viewName.indexOf('/')+1);
             }
             return viewName;
         }
@@ -105,13 +106,19 @@
 
         // Fire triggerView when SPA loads and when hash changes in SPA
         if (window.location.pathname.indexOf('react') > -1) {
-            triggerView(location.hash);
+            triggerView(location.pathname);
         }
-        window.onhashchange = function() {
+        window.onclick = function() {
             if (window.location.pathname.indexOf('react') > -1) {
-                triggerView(location.hash);
+                triggerView(location.pathname);
             }
         }
+        // window.onhashchange = function() {
+        //     if (window.location.pathname.indexOf('react') > -1) {
+        //         console.log('here2');
+        //         triggerView(location.pathname);
+        //     }
+        // }
     </script>
   </head>
   <body>
