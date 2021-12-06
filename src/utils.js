@@ -9,7 +9,7 @@ function useStorageState(defaultValue, key, storageType) {
   });
   useEffect(() => {
     storageType.setItem(key, JSON.stringify(value));
-  }, [key, value]);
+  }, [key, value, storageType]);
   return [value, setValue];
 }
 

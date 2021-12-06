@@ -13,7 +13,10 @@ const LoginBtn = () => {
     }
 
     return (
-        <Button onClick={btnClickHandler}>{btnTxt}</Button>
+        <div>
+            {isLogin && <div>Currently logged in.</div>}
+            <Button onClick={btnClickHandler}>{btnTxt}</Button>
+        </div>
     );
 };
 
