@@ -41,9 +41,9 @@ const App = () => {
                 <div className="bx--col-md-4 bx--col-lg-4 bx--col-xlg-4 bx--col-max-4">
                   <h3>Navigation</h3>
                   <br />
-                  <nav>
-                    <Link to="/"><CarbonLink size="lg">Dashboard</CarbonLink></Link><br />
-                    <Link to="/InfoPage"><CarbonLink size="lg">InfoPage</CarbonLink></Link>
+                  <nav className="navLinks">
+                    <Link to="/">Dashboard</Link><br />
+                    <Link to="/InfoPage">InfoPage</Link>
                   </nav>
                 </div>
 

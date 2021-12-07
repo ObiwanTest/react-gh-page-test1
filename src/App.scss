@@ -54,3 +54,7 @@ dd {
   padding-left: 1em;
   padding-bottom: 1em;
 }
+
+.navLinks {
+  @include type-style(body-short-02);
+}
