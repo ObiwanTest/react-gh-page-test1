@@ -1,7 +1,8 @@
 import './App.scss';
 import React from 'react';
-import { Content, Link } from 'carbon-components-react';
+import { Content, Link as CarbonLink } from 'carbon-components-react';
 import { Switch, Route } from 'react-router';
+import { Link } from 'react-router-dom';
 import Login from './components/Login';
 import LogoutBtn from './components/LogoutBtn';
 import Dashboard from './components/Dashboard';
@@ -41,8 +42,8 @@ const App = () => {
                   <h3>Navigation</h3>
                   <br />
                   <nav>
-                    <Link href="/" size="lg">Dashboard</Link><br />
-                    <Link href="/InfoPage" size="lg">InfoPage</Link>
+                    <Link to="/"><CarbonLink size="lg">Dashboard</CarbonLink></Link><br />
+                    <Link to="/InfoPage"><CarbonLink size="lg">InfoPage</CarbonLink></Link>
                   </nav>
                 </div>
 
