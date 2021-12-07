@@ -8,7 +8,6 @@ import Dashboard from './components/Dashboard';
 import InfoPage from './components/InfoPage/InfoPage';
 import useToken from './customHooks/useToken';
 import InfoText from './components/InfoText';
-import ClearLocalStorageBtn from './components/ClearLocalStorageBtn';
 
 const App = () => {
   const { token, setToken } = useToken();
