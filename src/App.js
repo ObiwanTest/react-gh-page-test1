@@ -1,32 +1,82 @@
 import './App.scss';
-import { Content } from 'carbon-components-react';
 import React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import LoginBtn from './components/LoginBtn/LoginBtn';
+import { Content, Link } from 'carbon-components-react';
+import { Switch, Route } from 'react-router';
+import Login from './components/Login';
+import LogoutBtn from './components/LogoutBtn';
+import Dashboard from './components/Dashboard';
+import InfoPage from './components/InfoPage/InfoPage';
+import useToken from './customHooks/useToken';
+import InfoText from './components/InfoText';
+import ClearLocalStorageBtn from './components/ClearLocalStorageBtn';
 
-function App() {
+const App = () => {
+  const { token, setToken } = useToken();
+
   return (
-    <>
-      <Content>
-        <LoginBtn />
-        <nav>
-          <ul id="navigation">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/about" component={AboutPage} />
-        </Switch>
-      </Content>
-    </>
+    <Content>
+      <div className="bx--grid">
+        <div className="bx--row">
+          <div className="bx--col-md-14 bx--col-lg-14 bx--col-xlg-14 bx--col-max-14">
+            <h1>Demo App</h1>
+          </div>
+          {
+            token ? (
+              <div className="bx--col-md-2 bx--col-lg-2 bx--col-xlg-2 bx--col-max-2">
+                <LogoutBtn token={token} setToken={setToken}/>
+              </div>
+            ) : (
+              <InfoText />
+            )
+          }
+        </div>
+
+        <hr />
+        <br />
+
+        <div className="bx--row">
+          {
+            token ? (
+              <>
+                <div className="bx--col-md-4 bx--col-lg-4 bx--col-xlg-4 bx--col-max-4">
+                  <h3>Navigation</h3>
+                  <br />
+                  <nav>
+                    <Link href="/" size="lg">Dashboard</Link><br />
+                    <Link href="/InfoPage" size="lg">InfoPage</Link>
+                  </nav>
+                </div>
+
+                <div className="bx--col-md-12 bx--col-lg-12 bx--col-xlg-12 bx--col-max-12">
+                  <Switch>
+                    <Route exact path="/">
+                      <Dashboard token={ token } />
+                    </Route>
+                    <Route path="/InfoPage">
+                      <InfoPage />
+                    </Route>
+                  </Switch>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="bx--col-md-4 bx--col-lg-4 bx--col-xlg-4 bx--col-max-4">
+                  <Login token={token} setToken={setToken} />
+                </div>
+
+                <div className="bx--col-md-6 bx--col-lg-6 bx--col-xlg-6 bx--col-max-6">
+                  <InfoPage />
+                </div>
+
+                <div className="bx--col-md-6 bx--col-lg-6 bx--col-xlg-6 bx--col-max-6">
+                  <InfoPage />
+                </div>
+              </>
+            )
+          }
+        </div>
+      </div>
+    </Content>
   );
 }
 
