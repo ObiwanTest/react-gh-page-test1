@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Form, TextInput, Button } from 'carbon-components-react';
 import { PropTypes } from 'prop-types';
-import useToken from '../../customHooks/useToken';
 
 async function loginUser(credentials) {
     var jsonStr = JSON.stringify(credentials);
