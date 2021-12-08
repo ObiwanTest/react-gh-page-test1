@@ -1,7 +1,8 @@
 import './App.scss';
 import React from 'react';
-import { Content, Link } from 'carbon-components-react';
+import { Content } from 'carbon-components-react';
 import { Switch, Route } from 'react-router';
+import { Link } from 'react-router-dom';
 import Login from './components/Login';
 import LogoutBtn from './components/LogoutBtn';
 import Dashboard from './components/Dashboard';

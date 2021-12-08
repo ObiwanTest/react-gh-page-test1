@@ -1,0 +1,8 @@
+---
+application
+- path: .
+  name: node-demo-test1
+  buildpack: sdk-for-nodejs
+  memory: 256M
+  instance: 1
+  random-route: true
