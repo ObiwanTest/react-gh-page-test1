@@ -1,9 +1,26 @@
+## Steps to deploy on cloud
+```
+# Go to cloud shell
+
+# Clone the repo
+git clone https://<USERNAME>:<PASSWORD>@github.com/ObiwanTest/react-gh-page-test1.git
+
+# cd into repo
+cd react-gh-page-test1
+
+# Target cloud foundary region
+ibmcloud target --cf
+
+# Push app to cf
+ibmcloud cf push
+```
+
 ## Deploy to GitHub Pages
 ```
 yarn deploy
 ```
 
-## Setup Steps
+## Repo Initial Steps (For reference)
 ```
 # Clone repo.
 git clone git@github.com:ObiwanTest/react-gh-page-test1.git

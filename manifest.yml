@@ -1,5 +1,5 @@
 ---
-application
+applications:
 - path: .
   name: node-demo-test1
   buildpack: sdk-for-nodejs
