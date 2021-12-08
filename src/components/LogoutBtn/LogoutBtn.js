@@ -15,7 +15,7 @@ const LogoutBtn = ({ token, setToken }) => {
     return (
         <>
             <Form onSubmit={submitHandler}>
-                <Button type="submit">Logout</Button>
+                <Button className="clickableBtn" type="submit">Logout</Button>
             </Form>
         </>
     );

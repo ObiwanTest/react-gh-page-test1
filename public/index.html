@@ -75,9 +75,7 @@
             cookieDomain: 'obiwantest.github.io' // set cookies on subdomain bc github.io is on public suffix list
         };
     </script>
-    <!--/targetPageParams(), targetGlobalSettings--> 
-
-    <script src="at.js"></script> 
+    <script src="jquery-3.6.0.min.js"></script> 
 
     <script>
         // Sanitize viewName to get rid of any trailing symbols derived from URL
@@ -100,26 +98,42 @@
                 adobe.target.triggerView(viewName);
                 console.log('AT: View triggered on page load: ' + viewName);
             } else {
-		        console.log('AT: view not triggered but viewName was: '+viewName);
+                console.log('AT: view not triggered but viewName was: ' + viewName);
             }
         }
 
         // Fire triggerView when SPA loads and when hash changes in SPA
-        if (window.location.pathname.indexOf('react') > -1) {
-            triggerView(location.pathname);
-        }
-        window.onclick = function() {
-            if (window.location.pathname.indexOf('react') > -1) {
-                triggerView(location.pathname);
-            }
-        }
+        // if (window.location.pathname.indexOf('react') > -1) {
+        //     triggerView(location.pathname);
+        // }
+        // window.onclick = function() {
+        //     if (window.location.pathname.indexOf('react') > -1) {
+        //         triggerView(location.pathname);
+        //     }
+        // }
         // window.onhashchange = function() {
         //     if (window.location.pathname.indexOf('react') > -1) {
         //         console.log('here2');
         //         triggerView(location.pathname);
         //     }
         // }
+
+        $(document).ready(function() {
+            $("body").on("click",".clickableBtn",function(ev) {
+                if (window.location.pathname.indexOf('react') > -1) {
+                    triggerView(location.pathname);
+                }
+            });
+            $("body").on("click",".navLinks",function(ev) {
+                // console.log("clicked!");
+                if (window.location.pathname.indexOf('react') > -1) {
+                    triggerView(location.pathname);
+                }
+            });
+        });
     </script>
+
+    <script src="at.js"></script> 
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

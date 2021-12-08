@@ -40,7 +40,7 @@ const Login = ({ setToken }) => {
                     onChange={e => setPassword(e.target.value)}
                 />
                 <br />
-                <Button type="submit">Login</Button>
+                <Button className="clickableBtn" type="submit">Login</Button>
             </Form>
         </>
     );
