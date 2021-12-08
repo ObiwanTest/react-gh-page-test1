@@ -4,9 +4,11 @@ import './index.scss';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+// <Router basename="/react-gh-page-test1">
+
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename="/react-gh-page-test1">
+    <Router>
       <App />
     </Router>
   </React.StrictMode>,
