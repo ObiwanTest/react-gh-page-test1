@@ -12,10 +12,6 @@ app.use(express.static(path.join("build")));
 app.use(express.static(path.join("build", "static")));
 app.use(express.static("public"));
 
-app.get('/', (req, res) => {
-    res.send('reponse from express.js');
-})
-
 app.use('/exampleApi', (req, res) => {
     res.send({
         token: 'test123'
