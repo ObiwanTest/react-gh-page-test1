@@ -8,7 +8,8 @@ const app = express();
 // Enable cross-origin resource sharing
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join("build")));
+app.use(express.static(path.join("build", "static")));
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
@@ -22,7 +23,7 @@ app.use('/exampleApi', (req, res) => {
 });
 
 app.use((req, res, next) => {
-    res.sendFile(path.join(__dirname, "build", "index.html"));
+    res.sendFile(path.join("build", "index.html"));
 })
 
 app.listen(8080, () => console.log('Running Node.js express...'));
