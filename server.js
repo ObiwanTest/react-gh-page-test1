@@ -8,9 +8,9 @@ const app = express();
 // Enable cross-origin resource sharing
 app.use(cors());
 
-app.use(express.static(path.join("build")));
-app.use(express.static(path.join("build", "static")));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "build", "static")));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use('/exampleApi', (req, res) => {
     res.send({
