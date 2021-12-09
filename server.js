@@ -19,7 +19,7 @@ app.use('/exampleApi', (req, res) => {
 });
 
 app.use((req, res, next) => {
-    res.sendFile(path.join("build", "index.html"));
+    res.sendFile(path.join("index.html"));
 })
 
 app.listen(8080, () => console.log('Running Node.js express...'));
