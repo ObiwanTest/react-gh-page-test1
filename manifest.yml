@@ -7,6 +7,6 @@ applications:
   instance: 1
   random-route: true
   domain: mybluemix.net
-  command: yarn build && node server.js
+  command: node server.js
   env:
     env_type: production
